@@ -104,36 +104,6 @@ export const CatalogAndCostCard: React.FC<CatalogAndCostCardProps> = ({
         </div>
       )}
 
-      {/* Prerequisite Resolution Status */}
-      {dependencyGraph.length > 0 && (
-        <div className="space-y-1.5 pt-2 border-t border-[#E5E0D6]">
-          <span className="text-[10px] font-semibold text-[#636772] uppercase tracking-wider block">
-            Input Prerequisites Status:
-          </span>
-          <div className="space-y-1 text-[10px] font-mono">
-            {dependencyGraph.map((d, idx) => (
-              <div key={idx} className="flex items-center justify-between p-1.5 rounded bg-[#FAF7F2] border border-[#E5E0D6]">
-                <span className="text-[#121316]">{d.requiredInput}</span>
-                <span
-                  className={
-                    d.status === 'satisfied'
-                      ? 'text-[#1E7E34] font-semibold'
-                      : d.status === 'resolved_via_prerequisite'
-                      ? 'text-[#1E6FD9] font-semibold'
-                      : 'text-[#B25E00] font-semibold'
-                  }
-                >
-                  {d.status === 'satisfied'
-                    ? '✓ Seed Input'
-                    : d.status === 'resolved_via_prerequisite'
-                    ? '✓ Resolved via Prerequisite'
-                    : '⚠ Unresolved Gap'}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Unresolved Evidence Gaps */}
       {unresolvedGaps && unresolvedGaps.length > 0 && (

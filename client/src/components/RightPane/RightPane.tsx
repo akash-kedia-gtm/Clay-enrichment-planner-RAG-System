@@ -3,7 +3,6 @@ import { StageTracker } from './StageTracker';
 import { CompanyInfoCard } from './CompanyInfoCard';
 import { CampaignOverviewCard } from './CampaignOverviewCard';
 import { DecisionQuestionCard } from './DecisionQuestionCard';
-import { HypothesisMatrixCard } from './HypothesisMatrixCard';
 import { CatalogAndCostCard } from './CatalogAndCostCard';
 import { CampaignRun } from '../../types/workflow';
 
@@ -30,19 +29,13 @@ export const RightPane: React.FC<RightPaneProps> = ({ run, isLoading }) => {
         />
       </div>
 
-      {/* 2-Column Grid: Target Company Personas & Hypothesis Matrix */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-        {/* 3. Target Company Personas, Decision Questions & Selected Gate */}
-        <DecisionQuestionCard
-          personas={run.proposedPersonas}
-          selectedPersonaId={run.selectedPersonaId}
-          proposedQuestions={run.proposedQuestions}
-          selectedQuestionId={run.selectedQuestionId}
-        />
-
-        {/* 4. Checkpoints C1, C2, C3: Hypotheses, Outcomes & Evidence Requirements */}
-        <HypothesisMatrixCard matrix={run.hypothesisMatrix} />
-      </div>
+      {/* 3. Target Company Personas, Decision Questions & Selected Gate */}
+      <DecisionQuestionCard
+        personas={run.proposedPersonas}
+        selectedPersonaId={run.selectedPersonaId}
+        proposedQuestions={run.proposedQuestions}
+        selectedQuestionId={run.selectedQuestionId}
+      />
 
       {/* 5. Retrieved Catalogue Records, Prerequisite Graph, Billing Formulas and Unresolved Gaps */}
       <CatalogAndCostCard
