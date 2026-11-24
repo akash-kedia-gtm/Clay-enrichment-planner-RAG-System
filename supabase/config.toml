@@ -1,0 +1,19 @@
+project_id = "clay-campaign-planner"
+
+[api]
+port = 54321
+
+[db]
+port = 54322
+
+[functions.groq-service]
+verify_jwt = false
+
+[functions.workflow-checkpoint]
+verify_jwt = false
+
+[functions.catalogue-search]
+verify_jwt = false
+
+[functions.catalogue-retrieval]
+verify_jwt = false

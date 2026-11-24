@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 2 pt reduction: standard base 16px (12pt) down to 13.33px (~10pt) */
+    font-size: 13.333px;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: #FAF9F5;
+    color: #121316;
+    font-size: 13px;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #FF4713;
+    color: #ffffff;
+  }
+}
+
+/* ========================================================= */
+/* DARK MODE OVERRIDES (Obsidian / Clay Dark System)         */
+/* ========================================================= */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0E0F12 !important;
+  color: #F0F1F4 !important;
+}
+
+/* Canvas & Header */
+html.dark .bg-\[\#FAF9F5\],
+html.dark .bg-\[\#FAF9F5\]\/95 {
+  background-color: #0E0F12 !important;
+}
+
+/* Main Cards & Surfaces */
+html.dark .bg-white,
+html.dark .bg-white\/40,
+html.dark .bg-white\/60,
+html.dark .bg-white\/80 {
+  background-color: #16171B !important;
+}
+
+/* Inner Panels / Wells / Code Blocks */
+html.dark .bg-\[\#FAF7F2\],
+html.dark .bg-\[\#F4F1EA\],
+html.dark .bg-\[\#EAE5DB\],
+html.dark .bg-\[\#F0ECE1\] {
+  background-color: #1B1D22 !important;
+}
+
+/* Selected Card Warm Glowing Tint */
+html.dark .bg-\[\#FFF8F5\],
+html.dark .bg-\[\#FFF6ED\],
+html.dark .bg-\[\#FFF0EB\] {
+  background-color: #271712 !important;
+}
+
+/* Borders */
+html.dark .border-\[\#E5E0D6\],
+html.dark .border-\[\#EFEBE2\],
+html.dark .border-\[\#C5BEB0\] {
+  border-color: #2A2C34 !important;
+}
+
+html.dark .border-\[\#FFD5C7\],
+html.dark .border-\[\#FFD9CC\] {
+  border-color: #552317 !important;
+}
+
+/* Typography Colors */
+html.dark .text-\[\#121316\] {
+  color: #F3F4F6 !important;
+}
+
+html.dark .text-\[\#636772\] {
+  color: #9CA3AF !important;
+}
+
+html.dark .text-\[\#8B8F9A\],
+html.dark .text-\[\#8C909B\] {
+  color: #6B7280 !important;
+}
+
+html.dark .text-\[\#A72D07\] {
+  color: #FF7A45 !important;
+}
+
+/* Hover States */
+html.dark .hover\:bg-\[\#FAF7F2\]:hover,
+html.dark .hover\:bg-\[\#F0ECE1\]:hover,
+html.dark .hover\:bg-\[\#EAE5DB\]:hover {
+  background-color: #23252C !important;
+}
+
+html.dark .hover\:bg-white:hover {
+  background-color: #1F2127 !important;
+}
+
+/* Form Controls */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #1B1D22 !important;
+  border-color: #2A2C34 !important;
+  color: #F3F4F6 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #6B7280 !important;
+}
+
+/* Badges & Status Pills in Dark Mode */
+html.dark .bg-\[\#EDF5FF\] {
+  background-color: #132238 !important;
+  border-color: #1C3558 !important;
+  color: #60A5FA !important;
+}
+
+html.dark .bg-\[\#F5F8D5\],
+html.dark .bg-\[\#F4F8D3\],
+html.dark .bg-\[\#EEF3C4\] {
+  background-color: #212908 !important;
+  border-color: #3F4B0E !important;
+  color: #D6E42B !important;
+}
+html.dark .border-\[\#CBD810\],
+html.dark .border-\[\#DFE8A8\] {
+  border-color: #3F4B0E !important;
+}
+html.dark .text-\[\#4A5404\] {
+  color: #D6E42B !important;
+}
+
+html.dark .bg-\[\#FFF4E5\] {
+  background-color: #2D1D09 !important;
+  border-color: #4C310F !important;
+  color: #FBBF24 !important;
+}
+html.dark .border-\[\#FFE2B8\] {
+  border-color: #4C310F !important;
+}
+html.dark .text-\[\#B25E00\] {
+  color: #FBBF24 !important;
+}
+
+html.dark .bg-\[\#FDECEE\] {
+  background-color: #2F1116 !important;
+  border-color: #4E1E26 !important;
+  color: #F87171 !important;
+}
+html.dark .border-\[\#FAC5CB\] {
+  border-color: #4E1E26 !important;
+}
+html.dark .text-\[\#C92A2A\] {
+  color: #F87171 !important;
+}
+
+html.dark .bg-\[\#F3EEFF\] {
+  background-color: #231B38 !important;
+  border-color: #3E2F5E !important;
+  color: #B8A4ED !important;
+}
+
+html.dark .text-\[\#D83A0C\],
+html.dark .text-\[\#FF4713\] {
+  color: #FF5A1F !important;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #DAD4C8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5BEB0;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #2E303A;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3E414E;
+}
